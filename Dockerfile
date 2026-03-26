@@ -2,8 +2,12 @@
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 
 WORKDIR /app
-COPY . .
-RUN mvn clean package -DskipTests
+
+# 👇 copy ONLY backend folder
+COPY course-management-backend /app
+
+# 👇 run maven inside correct folder
+RUN mvn -f /app/pom.xml clean package -DskipTests
 
 # Run stage
 FROM eclipse-temurin:21-jdk
