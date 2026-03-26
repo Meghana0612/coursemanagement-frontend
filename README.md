@@ -81,3 +81,4 @@ src/
 "# course-backend" 
 "# course-management-frontend" 
 "# course-management-frontend" 
+"# coursemanagement-frontend" 
