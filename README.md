@@ -79,3 +79,4 @@ src/
 - **React Hot Toast** for notifications
 - **React Icons** (Feather Icons)
 "# course-backend" 
+"# course-management-frontend" 
