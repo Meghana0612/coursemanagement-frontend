@@ -1,18 +1,22 @@
-# Build stage
+# ---------- BUILD STAGE ----------
 FROM maven:3.9.9-eclipse-temurin-21 AS build
 
 WORKDIR /app
 
-# 👇 copy ONLY backend folder
-COPY course-management-backend /app
+# Copy full project
+COPY . .
 
-# 👇 run maven inside correct folder
-RUN mvn -f /app/pom.xml clean package -DskipTests
+# Build the project (skip tests for speed)
+RUN mvn clean package -DskipTests
 
-# Run stage
+
+# ---------- RUN STAGE ----------
 FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
+
+# Copy jar from build stage
 COPY --from=build /app/target/*.jar app.jar
 
+# Run application
 ENTRYPOINT ["java","-jar","app.jar"]
