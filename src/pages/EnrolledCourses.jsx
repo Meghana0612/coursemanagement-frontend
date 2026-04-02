@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FiBookOpen, FiClock, FiAward, FiTrendingUp, FiArrowRight } from 'react-icons/fi'

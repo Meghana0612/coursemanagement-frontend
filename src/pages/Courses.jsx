@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect, useCallback } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { FiSearch, FiFilter, FiX, FiPlus, FiSliders } from 'react-icons/fi'
